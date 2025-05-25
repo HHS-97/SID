@@ -1,0 +1,62 @@
+/* 🌟 전체 사이드바 스타일 */
+.sidebar-container {
+    width: 240px;
+    background-color: #ffffff;
+    border-right: 1px solid #e1e4e8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 🌟 메뉴 리스트 */
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* 🌟 메뉴 항목 스타일 */
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+    margin: 5px 10px;
+  }
+  
+  /* 🌟 활성화된 메뉴 */
+  .active {
+    background-color: #e8f0fe;
+    color: #007aff;
+    font-weight: bold;
+  }
+  
+  /* 🌟 모바일 햄버거 버튼 */
+  .hamburger-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1301;
+    display: none;
+  }
+  
+  /* 🌟 반응형 - 모바일에서 숨기기 */
+  @media (max-width: 768px) {
+    .sidebar-container {
+      display: none; /* ✅ 모바일에서는 숨김 */
+    }
+  
+    .hamburger-btn {
+      display: block;
+    }
+  }
+  

@@ -1,0 +1,100 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.1'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'org.ssafy'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.15.2'
+//    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate6:2.15.2'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+    // env
+    implementation 'io.github.cdimascio:dotenv-java:2.2.0'
+    // Embedded Redis
+//    implementation group: 'it.ozimov', name: 'embedded-redis', version: '0.7.2'
+    // redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    // email authentication
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    // Spring Data JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // Oauth
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.security:spring-security-messaging'
+    implementation 'org.springframework:spring-messaging'
+    implementation 'org.awaitility:awaitility'
+
+    // RabbitMQ Starter Dependency
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+
+    // Full Featured STOMP Broker Relay를 위한 추가 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-reactor-netty'
+
+    
+    // FCM
+    
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.google.firebase:firebase-admin:9.4.1'        // Google Firebase Admin
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2' // 날짜 시간 JSON 변화용
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-parameters']
+
+}
+
+tasks.named('jar') {
+    enabled = false
+}
+
+// bootJar 태스크에서 원하는 JAR 파일 이름 설정
+tasks.named('bootJar') {
+    archiveBaseName.set('SID-Docker-Spring') // 원하는 JAR 파일 이름
+    archiveVersion.set('0.0.1') // 원하는 버전 설정
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+

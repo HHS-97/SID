@@ -1,0 +1,42 @@
+/* 대시보드 전체 레이아웃 */
+.dashboard {
+  display: flex;
+  background-color: #f9f9f930;
+}
+.dashboard-header {
+  padding-left: 20px;
+}
+/* 그리드 레이아웃 */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2개의 컬럼 */
+  gap: 20px; /* 요소 간격 */
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 1000px;
+}
+
+/* 기본 카드 스타일 */
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 넓은 카드 (한 줄 차지) */
+.dashboard-card-wide {
+  grid-column: span 2;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 카드 내부 차트 */
+.dashboard-card canvas {
+  width: 100% !important;
+  height: auto !important;
+}

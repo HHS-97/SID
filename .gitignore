@@ -1,0 +1,7 @@
+.vscode/*
+mlruns/*
+*/__pycache__/*
+*/mlruns/*
+*.h5
+# Firebase Admin SDK credentials
+Back/SID/src/main/resources/firebase/*.json

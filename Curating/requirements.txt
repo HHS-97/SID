@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+numpy
+pandas
+sqlalchemy
+pydantic
+tabulate
+pymysql
+python-multipart
+python-dotenv
+keras>=3.8.0
+tensorflow
+scikit-learn

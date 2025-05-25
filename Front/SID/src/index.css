@@ -1,0 +1,42 @@
+@import url(../public/pretendardvariable.css);
+@import "tailwindcss";
+
+* {
+	font-family: "Pretendard Variable";
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* 데스크탑 */
+@media only screen and (min-width: 500px) {
+	#root {
+		background-color: gray;
+	}
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+/* Chrome, Safari, Opera 등 Webkit 브라우저에서 스크롤바 숨기기 */
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+/* IE, Edge, Firefox에서 스크롤바 숨기기 */
+.hide-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}

@@ -1,0 +1,42 @@
+/* .appRoot {
+	max-width: 500px;
+	min-height: 100vh;
+	background-color: white;
+	margin: auto;
+}
+
+.header-top {
+	height: 15vh;
+}
+
+.router-page {
+	height: 75vh;
+}
+
+.toolbar-bottom {
+	height: 5vh;
+} */
+
+@keyframes bg-move {
+	0% {
+	  background-position: 0% 0%;
+	}
+	50% {
+	  background-position: 100% 100%;
+	}
+	100% {
+	  background-position: 0% 0%;
+	}
+  }
+  
+  /* 💫 부드러운 배경 애니메이션 */
+  .animate-bg {
+	background-size: 300% 300%;
+	animation: bg-move 30s infinite alternate ease-in-out;
+  }
+  
+  /* 🎨 차분한 베이지 & 연핑크 그라디언트 배경 */
+  .bg-soft-beige {
+	background: linear-gradient(to bottom, #fdf3e7, #fae1dd, #f8d7da);
+  }
+  
